@@ -1851,7 +1851,8 @@ class Option(Parameter):
 
         if name is None and possible_names:
             possible_names.sort(key=lambda x: -len(x[0]))  # group long options first
-            name = possible_names[0][1].replace("-", "_").lower()
+            #Commented out to not enforce an automatic lower-casing of all variables:
+            name = possible_names[0][1].replace("-", "_")#.lower()
             if not name.isidentifier():
                 name = None
 

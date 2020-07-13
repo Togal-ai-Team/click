@@ -288,8 +288,8 @@ def test_file_lazy_mode(runner):
 def test_path_option(runner):
     @click.command()
     @click.option("-O", type=click.Path(file_okay=False, exists=True, writable=True))
-    def write_to_dir(o):
-        with open(os.path.join(o, "foo.txt"), "wb") as f:
+    def write_to_dir(O):
+        with open(os.path.join(O, "foo.txt"), "wb") as f:
             f.write(b"meh\n")
 
     with runner.isolated_filesystem():
