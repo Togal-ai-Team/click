@@ -2062,7 +2062,8 @@ class Argument(Parameter):
             raise TypeError("Could not determine name for argument")
         if len(decls) == 1:
             name = arg = decls[0]
-            name = name.replace("-", "_").lower()
+            #Now allows uppercase letters in argument names:
+            name = name.replace("-", "_")#.lower()
         else:
             raise TypeError(
                 "Arguments take exactly one parameter declaration, got"
